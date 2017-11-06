@@ -2,6 +2,8 @@
 
 const express = require('express');
 
+console.log(process.env);
+
 // Constants
 const PORT = 8080;
 const HOST = '0.0.0.0';
