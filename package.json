@@ -1,0 +1,13 @@
+{
+  "name": "ttn2luftdaten_forwarder",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Toon Nelissen <toon.nelissen@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
