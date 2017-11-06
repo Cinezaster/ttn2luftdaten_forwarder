@@ -1,12 +1,20 @@
 {
   "name": "ttn2luftdaten_forwarder",
   "version": "1.0.0",
-  "description": "",
-  "author": "Toon Nelissen <toon.nelissen@gmail.com>",
+  "description": "forwards luftdaten messages from ttn to luftdaten/madavi",
+  "author": {
+        "name" : "Toon Nelissen",
+        "email" : "toon.nelissen@gmail.com"
+      },
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
+  "repository" :{
+      "type" : "git",
+      "url" : "https://github.com/Cinezaster/ttn2luftdaten_forwarder"
+  },
+  "licence": "MIT",
   "dependencies": {
     "express": "^4.13.3",
     "request": "^2.83.0",
