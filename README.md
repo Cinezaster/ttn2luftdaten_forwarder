@@ -1,6 +1,6 @@
 # ttn2luftdaten_forwarder
 forwards data from ttn nodes to luftdaten and madavi
-[On docker hub] (https://hub.docker.com/r/cinezaster/ttn2luftdaten_forwarder/)
+[On docker hub](https://hub.docker.com/r/cinezaster/ttn2luftdaten_forwarder/)
 
 ## Requirements
 1. Knowledge how to work with docker and have it installed.
