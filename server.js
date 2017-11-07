@@ -46,8 +46,10 @@ ttn.data(appID, accessKey)
 
             // temp condition for testing only
             if (payload.dev_id.indexOf('toon_n_') > -1) {
+                log('Forwarding data from device: '+ devID)
+                log('data: '+ JSON.stringify(payload.payload_fields))
 
-                const deviceId = prefix + parseInt(payload.hardware_serial,16)
+                const deviceId = prefix+ '-' + parseInt(payload.hardware_serial,16)
 
                 if (payload.payload_fields.pm10 && payload.payload_fields.pm25) {
                     const pmPayload = [
@@ -64,7 +66,7 @@ ttn.data(appID, accessKey)
                     ]
                     sendData(dhtPayload, deviceId)
                 }
-                
+
             }
         })
     })
