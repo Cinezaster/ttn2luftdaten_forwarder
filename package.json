@@ -8,16 +8,21 @@
       },
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test" : "standard --fix --verbose | snazzy"
   },
   "repository" :{
       "type" : "git",
       "url" : "https://github.com/Cinezaster/ttn2luftdaten_forwarder"
   },
-  "licence": "MIT",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.13.3",
     "request": "^2.83.0",
     "ttn": "^2.2.8"
-  }
+    },
+    "devDependencies": {
+        "standard": "^10",
+        "snazzy": "^7"
+    }
 }

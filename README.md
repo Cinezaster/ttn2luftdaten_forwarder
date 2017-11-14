@@ -14,3 +14,10 @@ First build
 
 ### Run
 ```docker run --env appID= --env accessKey=  --env prefix= imageID```
+
+## Development
+### before
+```yarn install```
+### after
+```yarn run test```
+ keeps the code clean following the  [standard](https://www.npmjs.com/package/standard) rules
