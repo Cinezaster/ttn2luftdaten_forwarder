@@ -50,7 +50,7 @@ ttn.data(appID, accessKey)
             {value_type: 'HPM_P1', value: payload.payload_fields.pm10.toString()},
             {value_type: 'HPM_P2', value: payload.payload_fields.pm25.toString()}
           ]
-          sendData('https://api-rrd.madavi.de/data.php', pmPayload, deviceId)
+          sendData('https://api-rrd.madavi.de/data.php', hpm_pmPayload, deviceId)
         }
 
         if (payload.payload_fields.temperature && payload.payload_fields.humidity) {
