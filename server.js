@@ -16,10 +16,10 @@ const appID = process.env.appID
 const accessKey = process.env.accessKey
 const prefix = process.env.prefix
 
-const sendData = (url, payload, deviceId) => {
+const sendData = (url, payload, deviceId, XPin) => {
   const options = {
     headers: {
-      'X-Pin': (payload[0] === 'P1') ? 1 : 7,
+      'X-Pin': XPin,
       'X-Sensor': deviceId
     },
     method: 'POST',
@@ -45,12 +45,12 @@ ttn.data(appID, accessKey)
             {value_type: 'P1', value: payload.payload_fields.pm10.toString()},
             {value_type: 'P2', value: payload.payload_fields.pm25.toString()}
           ]
-          sendData('https://api.luftdaten.info/v1/push-sensor-data/', pmPayload,deviceId)
+          sendData('https://api.luftdaten.info/v1/push-sensor-data/', pmPayload,deviceId , 1)
           const hpm_pmPayload = [
             {value_type: 'HPM_P1', value: payload.payload_fields.pm10.toString()},
             {value_type: 'HPM_P2', value: payload.payload_fields.pm25.toString()}
           ]
-          sendData('https://api-rrd.madavi.de/data.php', hpm_pmPayload, deviceId)
+          sendData('https://api-rrd.madavi.de/data.php', hpm_pmPayload, deviceId, 1)
         }
 
         if (payload.payload_fields.temperature && payload.payload_fields.humidity) {
@@ -58,8 +58,8 @@ ttn.data(appID, accessKey)
             {value_type: 'temperature', value: payload.payload_fields.temperature.toString()},
             {value_type: 'humidity', value: payload.payload_fields.humidity.toString()}
           ]
-          sendData('https://api.luftdaten.info/v1/push-sensor-data/',dhtPayload, deviceId)
-          sendData('https://api-rrd.madavi.de/data.php',dhtPayload, deviceId)
+          sendData('https://api.luftdaten.info/v1/push-sensor-data/',dhtPayload, deviceId, 7)
+          sendData('https://api-rrd.madavi.de/data.php',dhtPayload, deviceId, 7)
         }
       })
     })
