@@ -35,10 +35,9 @@ const sendData = (url, payload, deviceId, XPin) => {
 ttn.data(appID, accessKey)
     .then((client) => {
       client.on('uplink', (devID, payload) => {
-        log('Forwarding data from device: ' + devID)
-        log('data: ' + JSON.stringify(payload.payload_fields))
-
         const deviceId = prefix + '-' + parseInt(payload.hardware_serial, 16)
+        log('Forwarding data from device: ' + devID + ' [' + deviceId + ']')
+        log('data: ' + JSON.stringify(payload.payload_fields))
 
         if (payload.payload_fields.pm10 && payload.payload_fields.pm25) {
           const pmPayload = [
