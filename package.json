@@ -1,6 +1,6 @@
 {
   "name": "ttn2luftdaten_forwarder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "forwards luftdaten messages from ttn to luftdaten/madavi",
   "author": {
     "name": "Toon Nelissen",
@@ -8,21 +8,27 @@
   },
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "standard --fix --verbose | snazzy"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Cinezaster/ttn2luftdaten_forwarder"
   },
   "license": "MIT",
+  "eslintConfig": {
+    "extends": "standard"
+  },
   "dependencies": {
-    "express": "^4.13.3",
-    "request": "^2.83.0",
-    "ttn": "^2.3.1"
+    "express": "^4.17.1",
+    "request": "^2.88.2",
+    "ttn": "^2.3.3"
   },
   "devDependencies": {
-    "standard": "^10",
-    "snazzy": "^7"
+    "eslint": "^7.8.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
   }
 }
